@@ -6,4 +6,13 @@
 
 .selectedPage {
     font-weight: bold;
+    background: rgb(36, 161, 36);
+    border: 1px solid black;
+    border-radius: 10px;
+    color: white;
+    padding: 5px;
+}
+
+.page {
+    padding-bottom: 10px;
 }
