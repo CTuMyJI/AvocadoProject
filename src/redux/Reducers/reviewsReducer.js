@@ -36,8 +36,8 @@ export const reviewsReducer = (state = initialState, action) => {
     }
 }
 
-export const addReviewsActionCreator = () => ({ type: ADD_REVIEWS })
+export const addReviews = () => ({ type: ADD_REVIEWS })
 
-export const updateNewReviewTextActionCreator = (text) => ({ type: UPDATE_NEW_REVIEW_TEXT, newText: text })
+export const updateNewReviewText = (text) => ({ type: UPDATE_NEW_REVIEW_TEXT, newText: text })
 
 export default reviewsReducer

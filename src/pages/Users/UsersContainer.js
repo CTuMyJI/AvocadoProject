@@ -1,6 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { setUsersAC, unfollowAC, followAC, setCurrentPageAC, setUsersTotalCountAC, toggleIsLoadingAC } from '../../redux/Reducers/usersReducer'
+import {
+    setUsers,
+    unfollow,
+    follow,
+    setCurrentPage,
+    setUsersTotalCount,
+    toggleIsLoading
+} from '../../redux/Reducers/usersReducer'
 import Users from './Users'
 import * as axios from 'axios'
 import Preloader from '../../components/common/Preloader'
@@ -12,7 +19,7 @@ class UsersContainer extends React.Component {
             .then(response => {
                 this.props.toggleIsLoading(false);
                 this.props.setUsers(response.data.items);
-                this.props.setTotalUsersCount(response.data.totalCount);
+                this.props.setUsersTotalCount(response.data.totalCount);
             });
     }
 
@@ -51,27 +58,7 @@ let mapStateToProps = (state) => {
     }
 }
 
-let mapDispatchToProps = (dispatch) => {
-    return {
-        follow: (userId) => {
-            dispatch(followAC(userId));
-        },
-        unfollow: (userId) => {
-            dispatch(unfollowAC(userId));
-        },
-        setUsers: (users) => {
-            dispatch(setUsersAC(users))
-        },
-        setCurrentPage: (pageNumber) => {
-            dispatch(setCurrentPageAC(pageNumber))
-        },
-        setTotalUsersCount: (totalCount) => {
-            dispatch(setUsersTotalCountAC(totalCount))
-        },
-        toggleIsLoading: (isLoading) => {
-            dispatch(toggleIsLoadingAC(isLoading))
-        }
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);
+export default connect(mapStateToProps,
+    {
+        follow, unfollow, setUsers, setCurrentPage, setUsersTotalCount, toggleIsLoading
+    })(UsersContainer);
