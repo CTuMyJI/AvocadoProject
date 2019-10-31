@@ -22,6 +22,5 @@ let mapDispatchToProps = (dispatch) => {
         }
     }
 }
-const OnconsultContainer = connect(mapStateToProps, mapDispatchToProps)(Onconsult);
 
-export default OnconsultContainer;
+export default connect(mapStateToProps, mapDispatchToProps)(Onconsult);
