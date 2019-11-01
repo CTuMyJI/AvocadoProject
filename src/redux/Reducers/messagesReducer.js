@@ -2,18 +2,15 @@ const ADD_MESSAGE = 'ADD-MESSAGE';
 const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 
 let initialState = {
-    message: [
-        { id: 1, message: 'Доброго дня!' },
-        { id: 2, message: 'Чим я можу Вам допомогти?' },
-        { id: 3, message: 'Privet yoba kak dila?' },
-        { id: 4, message: 'Вийди отсюда розбійник!' }
-    ],
-
-    answer: [
-        { id: 1, answer: 'Привіт!' },
-        { id: 2, answer: 'Як зробити дарувізну по смерті?' },
-        { id: 3, answer: 'Номально' },
-        { id: 4, answer: 'Сам вийди!' }
+    messageList: [
+        { id: 1, currentUser: true, message: 'Доброго дня!' },
+        { id: 2, currentUser: false, message: 'Привіт!' },
+        { id: 3, currentUser: true, message: 'Чим я можу Вам допомогти?' },
+        { id: 4, currentUser: false, message: 'Як зробити дарувізну по смерті?' },
+        { id: 5, currentUser: true, message: 'Privet yoba kak dila?' },
+        { id: 6, currentUser: false, message: 'Номально' },
+        { id: 7, currentUser: true, message: 'Вийди отсюда розбійник!' },
+        { id: 8, currentUser: false, message: 'Сам вийди!' }
     ],
 
     newMessageText: ''
@@ -23,12 +20,14 @@ const messagesReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_MESSAGE: {
             let newMessage = {
-                id: 5,
-                message: state.newMessageText
+                id: 9,
+                currentUser: true,
+                message: state.newMessageText                
             };
+            console.log(state)
             return {
                 ...state,
-                message: [...state.message, newMessage],
+                messageList: [...state.messageList, newMessage],
                 newMessageText: ''
             };
         }

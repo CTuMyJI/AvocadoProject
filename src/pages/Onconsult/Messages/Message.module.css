@@ -1,0 +1,33 @@
+.wrapper {
+    padding: 8px 15px;
+}
+
+.message {
+    display: flex;
+    width: 100%;
+}
+
+.alignRight {
+    justify-content: flex-end;
+}
+
+.alignLeft {
+    justify-content: flex-start;
+}
+ 
+.message .mine {
+    padding: 10px;
+    border-radius: 20px;
+    background: rgb(101, 233, 101);
+    position: relative;
+    border: 2px solid green;
+}
+
+  
+.message .yours {
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgb(238, 231, 127);
+    position: relative;
+    border: 2px solid green;
+}
