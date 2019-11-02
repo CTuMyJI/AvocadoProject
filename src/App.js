@@ -23,7 +23,7 @@ function App(props) {
           <Route path="/services" component={Services} />
           <Route path="/onconsult"
             render={() => <OnconsultContainer />} />
-            <Route path="/profile"
+            <Route path="/profile/:userId?"
             render={() => <ProfileContainer />} />
           <Route path="/partners"
             render={() => <Partners />} />
