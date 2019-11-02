@@ -3,3 +3,8 @@
     width: 80px;
     padding-right: 10px;
 }
+
+.loginBlock {
+    color: black;
+    justify-items: end;
+}

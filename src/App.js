@@ -1,6 +1,5 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import { Navbar } from './components/Navbar'
 import { Home } from './pages/Home/Home'
 import { Services } from './pages/Services/Services'
 import { Partners } from './pages/Partners/Partners'
@@ -10,11 +9,12 @@ import UsersContainer from './pages/Users/UsersContainer'
 import ProfileAContainer from './pages/Partners/A/ProfileAContainer'
 import ProfileNContainer from './pages/Partners/N/ProfileNContainer'
 import ProfileContainer from './pages/Profile/ProfileContainer'
+import NavbarContainer from './components/NavbarContainer'
 
 function App(props) {
   return (
     <div>
-      <Navbar />
+      <NavbarContainer />
       <div className="container pt-4">
         <Switch>
           <Route path="/" exact component={Home} />

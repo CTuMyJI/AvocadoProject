@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import s from './Navbar.module.css'
 
-export const Navbar = () => (
+export const Navbar = (props) => (
     <nav className="navbar navbar-dark bg-success navbar-expand-lg">
         <div className="navbar-brand">
             <img className={s.headerImage} src='https://pngriver.com/wp-content/uploads/2018/04/Download-Avocado-PNG-HD.png' alt='...'></img>
@@ -31,6 +31,10 @@ export const Navbar = () => (
             </li>
             <li className="navbar-item">
                 <NavLink to="/users" className="nav-link">Користувачі</NavLink>
+            </li>
+            <li className={s.loginBlock}>
+                { props.isAuth ? props.login
+                : <NavLink to={'/login'} className="nav-link">Login</NavLink> }
             </li>
         </ul>
     </nav>
