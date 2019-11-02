@@ -1,15 +1,15 @@
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const ADD_POST = 'ADD_POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
 
 let initialState = {
     profileList: [
-        { id: 1, avatar: 'https://ih0.redbubble.net/image.792313560.3852/mp,840x830,matte,f8f8f8,t-pad,1000x1000,f8f8f8.u2.jpg', status: 'Доброго дня!' }
+        { id: 1, avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyLOSI1mCpxzU6FVIs0FsQ9Oa0m50HroB7rVJk1FGh8aZYNszY&s', status: 'Доброго дня!' }
     ],
-    post: [
-        {id: 1, post: 'pepeha'},
-        {id: 2, post: 'pog'},
-        {id: 3, post: 'lul'},
+    posts: [
+        {id: 1, post: 'pepeha', likeCount: 3},
+        {id: 2, post: 'pog', likeCount: 1},
+        {id: 3, post: 'lul', likeCount: 4},
     ],
     newPostText: '',
     profile: null
@@ -20,11 +20,12 @@ const profileReducer = (state = initialState, action) => {
         case ADD_POST: {
             let newPost = {
                 id: 4,
-                post: state.newPostText                
+                post: state.newPostText,
+                likeCount: 4                
             };
             return {
                 ...state,
-                profileList: [...state.profileList, newPost],
+                posts: [...state.posts, newPost],
                 newPostText: ''
             };
         }

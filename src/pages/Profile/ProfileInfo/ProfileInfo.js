@@ -6,6 +6,19 @@ const ProfileInfo = (props) => {
         return <Preloader />
     }
     
+    let addPosts = () => {
+        props.addPost();
+    }
+
+    let onPostsChange = () => {
+        let text = newPostElement.current.value;
+        props.updateNewPostText(text);
+    }
+
+    let newPostElement = React.createRef();
+
+    let newPostTextBody = props.newPostText
+
     return (
         <div>
             <div>
@@ -13,13 +26,19 @@ const ProfileInfo = (props) => {
             </div>
             <li>{props.profile.aboutMe}, {props.profile.contacts.facebook}</li>
             <div>
-                <h3>My post</h3>
+                <h3>Мої пости</h3>
             </div>
             <div>
-                <textarea></textarea>
+                <textarea
+                placeholder='Введіть ваше повідомлення'
+                onChange={onPostsChange}
+                ref={newPostElement}
+                value={newPostTextBody}
+                className="form-control mr-sm-2"
+                ></textarea>
             </div>
             <div>
-                <button>Add post</button>
+                <button type="button" className="btn btn-success btn-lg" onClick={addPosts}>Додати пост</button>
             </div>
         </div>
     )
