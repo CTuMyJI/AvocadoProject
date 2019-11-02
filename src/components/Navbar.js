@@ -15,6 +15,9 @@ export const Navbar = () => (
                 <NavLink exact to="/" className="nav-link">На головну</NavLink>
             </li>
             <li className="navbar-item">
+                <NavLink exact to="/profile" className="nav-link">Моя сторінка</NavLink>
+            </li>
+            <li className="navbar-item">
                 <NavLink to="/about" className="nav-link">Про нас</NavLink>
             </li>
             <li className="navbar-item">

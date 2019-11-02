@@ -23,7 +23,6 @@ const Onconsult = (props) => {
         let text = newMessageElement.current.value;
         props.updateNewMessageText(text);
     }
-    console.log(props)
     return (
         <div className="jumbotron">
             <div className={s.dialogs}>

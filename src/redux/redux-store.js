@@ -5,6 +5,7 @@ import avoDataReducer from './Reducers/avoDataReducer';
 import dialogsReducer from './Reducers/dialogsReducer';
 import notDataReducer from './Reducers/notDataReducer';
 import usersReducer from "./Reducers/usersReducer";
+import profileReducer from "./Reducers/profileReducer";
 
 let reducers = combineReducers({
     messages: messagesReducer,
@@ -12,7 +13,8 @@ let reducers = combineReducers({
     avoData: avoDataReducer,
     dialogs: dialogsReducer,
     notData: notDataReducer,
-    usersPage: usersReducer
+    usersPage: usersReducer,
+    profilePage: profileReducer
 });
 
 let store = createStore(reducers);

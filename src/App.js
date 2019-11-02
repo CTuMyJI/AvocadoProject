@@ -9,6 +9,7 @@ import AboutContainer from './pages/About/AboutContainer'
 import UsersContainer from './pages/Users/UsersContainer'
 import ProfileAContainer from './pages/Partners/A/ProfileAContainer'
 import ProfileNContainer from './pages/Partners/N/ProfileNContainer'
+import ProfileContainer from './pages/Profile/ProfileContainer'
 
 function App(props) {
   return (
@@ -22,6 +23,8 @@ function App(props) {
           <Route path="/services" component={Services} />
           <Route path="/onconsult"
             render={() => <OnconsultContainer />} />
+            <Route path="/profile"
+            render={() => <ProfileContainer />} />
           <Route path="/partners"
             render={() => <Partners />} />
           <Route path="/users"
