@@ -24,7 +24,6 @@ const messagesReducer = (state = initialState, action) => {
                 currentUser: true,
                 message: state.newMessageText                
             };
-            console.log(state)
             return {
                 ...state,
                 messageList: [...state.messageList, newMessage],

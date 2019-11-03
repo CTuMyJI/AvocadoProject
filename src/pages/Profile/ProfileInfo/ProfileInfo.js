@@ -2,7 +2,6 @@ import React from 'react'
 import Preloader from '../../../components/common/Preloader'
 
 const ProfileInfo = (props) => {
-    console.log(props)
 
     if (!props.profile) {
         return <Preloader />
