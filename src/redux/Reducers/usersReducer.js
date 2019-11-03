@@ -10,7 +10,7 @@ let initialState = {
     pageSize: 5,
     totalUsersCount: 0,
     currentPage: 1,
-    isLoading: false
+    isLoading: false,
 };
 
 const usersReducer = (state = initialState, action) => {

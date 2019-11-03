@@ -1,7 +1,8 @@
 import React from 'react'
 import s from './Users.module.css'
 import userAvatar from '../../assets/images/user.jpg'
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import * as axios from 'axios'
 
 let Users = (props) => {
 
@@ -25,15 +26,36 @@ let Users = (props) => {
                 <span>
                     <div>
                         <NavLink to={'/profile/' + u.id}>
-                        <img className={s.image} src={u.photos.small != null ? u.photos.small : userAvatar} alt='...' />
+                            <img className={s.image} src={u.photos.small != null ? u.photos.small : userAvatar} alt='...' />
                         </NavLink>
                     </div>
                     <div>
                         {u.followed
-                            ? <button className="btn btn-danger btn-lg"
-                                onClick={() => { props.unfollow(u.id) }}>Відписатися</button>
-                            : <button className="btn btn-success btn-lg"
-                                onClick={() => { props.follow(u.id) }}>Підписатися</button>}
+                            ? <button className="btn btn-danger btn-lg" onClick={() => {
+                                
+                                axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
+                                    withCredentials: true,
+                                    headers: {"API-KEY": "4817f0c6-4f07-4668-912f-eb49d2bd675b"}
+                                })
+                                .then(response => {
+                                    if (response.data.resultCode === 0) {
+                                        props.unfollow(u.id);
+                                    }
+                                });
+                            }}>Відписатися</button>
+                                
+                            : <button className="btn btn-success btn-lg" onClick={() => {
+
+                                axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
+                                    withCredentials: true,
+                                    headers: {"API-KEY": "4817f0c6-4f07-4668-912f-eb49d2bd675b"}
+                                })
+                                    .then(response => {
+                                        if (response.data.resultCode === 0) {
+                                            props.follow(u.id);
+                                        }
+                                    });
+                            }}>Підписатися</button>}
                     </div>
                 </span>
                 <span>
