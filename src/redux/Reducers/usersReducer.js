@@ -1,3 +1,5 @@
+import { usersAPI } from "../../api/api";
+
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
@@ -50,11 +52,11 @@ const usersReducer = (state = initialState, action) => {
             return { ...state, isLoading: action.isLoading }
         }
         case TOGGLE_IS_FOLLOWINGPROGRESS: {
-            return { 
-                ...state, 
-                followingInProgress: action.isLoading 
-                ? [...state.followingInProgress, action.userId]
-                : state.followingInProgress.filter(id => id !== action.userId) 
+            return {
+                ...state,
+                followingInProgress: action.isLoading
+                    ? [...state.followingInProgress, action.userId]
+                    : state.followingInProgress.filter(id => id !== action.userId)
             }
         }
         default:
@@ -62,12 +64,57 @@ const usersReducer = (state = initialState, action) => {
     }
 }
 
-export const follow = (userId) => ({ type: FOLLOW, userId })
-export const unfollow = (userId) => ({ type: UNFOLLOW, userId })
+export const followSuccess = (userId) => ({ type: FOLLOW, userId })
+export const unfollowSuccess = (userId) => ({ type: UNFOLLOW, userId })
 export const setUsers = (users) => ({ type: SET_USERS, users })
 export const setCurrentPage = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage })
 export const setUsersTotalCount = (count) => ({ type: SET_TOTAL_USERS_COUNT, count })
 export const toggleIsLoading = (isLoading) => ({ type: TOGGLE_IS_LOADING, isLoading })
 export const toggleFollowingProgress = (isLoading, userId) => ({ type: TOGGLE_IS_FOLLOWINGPROGRESS, isLoading, userId })
+
+export const getUsers = (currentPage, pageSize) => {
+    return (dispatch) => {
+        dispatch(toggleIsLoading(true));
+        usersAPI.getUsers(currentPage, pageSize).then(data => {
+            console.log(data)
+            dispatch(toggleIsLoading(false));
+            dispatch(setUsers(data.items));
+            dispatch(setUsersTotalCount(data.totalCount));
+        });
+        
+    }
+}
+export const pageChange = (pageNumber, pageSize) => {
+    return (dispatch) => {
+        dispatch(setCurrentPage(pageNumber));
+        dispatch(toggleIsLoading(true));
+        usersAPI.getUsers(pageNumber, pageSize).then(data => {
+            dispatch(toggleIsLoading(false));
+            dispatch(setUsers(data.items));
+        });
+    }
+}
+export const follow = (id) => {
+    return (dispatch) => {
+        dispatch(toggleFollowingProgress(true, id));
+        usersAPI.follow(id).then(data => {
+            if (data.resultCode === 0) {
+                dispatch(followSuccess(id));
+            }
+            dispatch(toggleFollowingProgress(false, id));
+        });
+    }
+}
+export const unfollow = (id) => {
+    return (dispatch) => {
+        dispatch(toggleFollowingProgress(true, id));
+        usersAPI.unfollow(id).then(data => {
+            if (data.resultCode === 0) {
+                dispatch(unfollowSuccess(id));
+            }
+            dispatch(toggleFollowingProgress(false, id));
+        });
+    }
+}
 
 export default usersReducer;

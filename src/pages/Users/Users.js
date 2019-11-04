@@ -2,7 +2,6 @@ import React from 'react'
 import s from './Users.module.css'
 import userAvatar from '../../assets/images/user.jpg'
 import { NavLink } from 'react-router-dom'
-import { usersAPI } from '../../api/api'
 
 let Users = (props) => {
 
@@ -31,25 +30,13 @@ let Users = (props) => {
                     </div>
                     <div>
                         {u.followed
-                            ? <button disabled={props.followingInProgress.some(id => id === u.id)} className="btn btn-danger btn-lg" onClick={() => {
-                                props.toggleFollowingProgress(true, u.id);
-                                usersAPI.follow(u.id).then(data => {
-                                    if (data.resultCode === 0) {
-                                        props.unfollow(u.id);
-                                    }
-                                    props.toggleFollowingProgress(false, u.id);
-                                });
-                            }}>Відписатися</button>
-                                
-                            : <button disabled={props.followingInProgress.some(id => id === u.id)} className="btn btn-success btn-lg" onClick={() => {
-                                props.toggleFollowingProgress(true, u.id);
-                                usersAPI.unfollow(u.id).then(data => {
-                                        if (data.resultCode === 0) {
-                                            props.follow(u.id);
-                                        }
-                                        props.toggleFollowingProgress(false, u.id);
-                                    });
-                            }}>Підписатися</button>}
+                            ? <button disabled={props.followingInProgress.some(id => id === u.id)} className="btn btn-danger btn-lg"
+                                onClick={() => { props.unfollow(u.id) }}
+                            >Відписатися</button>
+
+                            : <button disabled={props.followingInProgress.some(id => id === u.id)} className="btn btn-success btn-lg"
+                                onClick={() => { props.follow(u.id) }}
+                            >Підписатися</button>}
                     </div>
                 </span>
                 <span>

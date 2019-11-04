@@ -13,23 +13,29 @@ export const usersAPI = {
                 return response.data;
             });
     },
-    follow(id) {
+    unfollow(id) {
         return instance.delete(`follow/${id}`)
             .then(response => {
                 return response.data;
             });
     },
-    unfollow(id) {
+    follow(id) {
         return instance.post(`follow/${id}`)
             .then(response => {
                 return response.data;
             });
     },
+    getProfile(userId) {
+        return instance.get(`profile/` + userId)
+        .then(response => {
+            return response.data;
+        });
+    }  
 }
 
-export const profileAPI = {
-    setUserProfile(userId) {
-        return instance.get(`profile/` + userId)
+export const authAPI = {
+    me() {
+        return instance.get(`auth/me`)
         .then(response => {
             return response.data;
         });
