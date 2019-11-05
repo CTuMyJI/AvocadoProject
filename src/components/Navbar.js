@@ -34,7 +34,7 @@ export const Navbar = (props) => (
             </li>
             <li className={s.loginBlock}>
                 { props.isAuth ? props.login
-                : <NavLink to={'/login'} className="nav-link">Login</NavLink> }
+                : <NavLink to={'/login'} className="nav-link">ВХІД</NavLink> }
             </li>
         </ul>
     </nav>

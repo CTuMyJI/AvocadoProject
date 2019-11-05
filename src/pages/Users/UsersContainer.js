@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import {Redirect} from 'react-router-dom'
 import {
     getUsers,
     follow,
@@ -19,6 +20,8 @@ class UsersContainer extends React.Component {
     }
 
     render() {
+        if (!this.props.isAuth) return <Redirect to='/login' />;
+
         return <>
             {this.props.isLoading ? <Preloader /> : null}
             <Users totalUsersCount={this.props.totalUsersCount}
@@ -41,7 +44,8 @@ let mapStateToProps = (state) => {
         totalUsersCount: state.usersPage.totalUsersCount,
         currentPage: state.usersPage.currentPage,
         isLoading: state.usersPage.isLoading,
-        followingInProgress: state.usersPage.followingInProgress
+        followingInProgress: state.usersPage.followingInProgress,
+        isAuth: state.auth.isAuth
     }
 }
 

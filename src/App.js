@@ -10,6 +10,7 @@ import ProfileAContainer from './pages/Partners/A/ProfileAContainer'
 import ProfileNContainer from './pages/Partners/N/ProfileNContainer'
 import ProfileContainer from './pages/Profile/ProfileContainer'
 import NavbarContainer from './components/NavbarContainer'
+import Login from './pages/Login/Login'
 
 function App(props) {
   return (
@@ -33,6 +34,8 @@ function App(props) {
             render={() => <ProfileNContainer />} />
           <Route path="/profilea"
             render={() => <ProfileAContainer />} />
+          <Route path="/login"
+            render={() => <Login />} />
         </Switch>
       </div>
     </div>

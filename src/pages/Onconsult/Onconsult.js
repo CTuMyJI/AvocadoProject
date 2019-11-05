@@ -2,6 +2,7 @@ import React from 'react'
 import s from './Onconsult.module.css'
 import DialogItem from '../Onconsult/DialogItem/DialogItem'
 import Message from './Messages/Message'
+import {Redirect} from 'react-router-dom'
 
 const Onconsult = (props) => {
 
@@ -23,6 +24,9 @@ const Onconsult = (props) => {
         let text = newMessageElement.current.value;
         props.updateNewMessageText(text);
     }
+
+    if (!props.isAuth) return <Redirect to='/login' />;
+
     return (
         <div className="jumbotron">
             <div className={s.dialogs}>
