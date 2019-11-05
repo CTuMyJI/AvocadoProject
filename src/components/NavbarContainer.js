@@ -2,6 +2,7 @@ import React from 'react'
 import { Navbar } from './Navbar'
 import { connect } from 'react-redux'
 import { getAuthUserData } from '../redux/Reducers/authReducer'
+import {compose} from 'redux'
 
 class NavbarContainer extends React.Component {
     componentDidMount() {
@@ -18,4 +19,6 @@ const mapStateToProps = (state) => ({
     login: state.auth.login
 })
 
-export default connect(mapStateToProps, {getAuthUserData})(NavbarContainer);
+export default compose(
+    connect(mapStateToProps, {getAuthUserData})
+)(NavbarContainer);

@@ -2,6 +2,7 @@ import { addMessage, updateNewMessageText } from '../../redux/Reducers/messagesR
 import Onconsult from './Onconsult'
 import { connect } from 'react-redux'
 import { withAuthRedirect } from '../../hoc/WithAuthRedirect'
+import { compose } from 'redux'
 
 let mapStateToProps = (state) => {
     return {
@@ -11,6 +12,7 @@ let mapStateToProps = (state) => {
     }
 }
 
-let AuthRedirectComponent = withAuthRedirect(Onconsult);
-
-export default connect(mapStateToProps, {updateNewMessageText, addMessage} )(AuthRedirectComponent);
+export default compose(
+    connect(mapStateToProps, {updateNewMessageText, addMessage}),
+    withAuthRedirect
+)(Onconsult);
