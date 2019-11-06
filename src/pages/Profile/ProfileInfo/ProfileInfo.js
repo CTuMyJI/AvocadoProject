@@ -1,5 +1,6 @@
 import React from 'react'
 import Preloader from '../../../components/common/Preloader'
+import ProfileStatus from './ProfileSatus'
 
 const ProfileInfo = (props) => {
 
@@ -25,11 +26,8 @@ const ProfileInfo = (props) => {
             <div>
                 <img src={props.profile.photos.large} alt='...' />
             </div>
-            <ul>
-                <h6>
-                    Статус: {props.profile.aboutMe}
-                </h6>
-            </ul>
+            <ProfileStatus status={"Hello world!"} />
+            <ul>Про мене: <h6>{props.profile.aboutMe}</h6></ul>
             <ul>Сторінка Facebook: <h6>{props.profile.contacts.facebook}</h6></ul>
             <ul>Github: <h6>{props.profile.contacts.github}</h6></ul>
             <div>
