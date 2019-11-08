@@ -2,26 +2,17 @@ import React from 'react'
 import s from './Onconsult.module.css'
 import DialogItem from '../Onconsult/DialogItem/DialogItem'
 import Message from './Messages/Message'
+import { reduxForm, Field } from 'redux-form'
 
 const Onconsult = (props) => {
+    
+    let dialogsElements =
+        props.dialogs.map(o => <DialogItem name={o.name} id={o.id} avatar={o.avatar} key={o.id} />)
+    let messagesElements =
+        props.messageList.map(m => <Message {...m} key={m.id} />)
 
-    let dialogsElements = 
-        props.dialogs.map(o => <DialogItem name={o.name} id={o.id} avatar={o.avatar} key={o.id}/>)
-
-    let messagesElements = 
-        props.messageList.map(m => <Message {...m} key={m.id}/>)
-
-    let newMessageTextBody = props.newMessageText;
-
-    let newMessageElement = React.createRef();
-
-    let onAddMessage = () => {
-        props.addMessage();
-    }
-
-    let onMessageChange = () => {
-        let text = newMessageElement.current.value;
-        props.updateNewMessageText(text);
+    let addNewMessage = (values) => {
+        props.addMessage(values.newMessageText);
     }
 
     return (
@@ -34,27 +25,30 @@ const Onconsult = (props) => {
                 <div className={s.chat}>
                     <h3>ЧАТ:</h3>
                     {messagesElements}
-                    <div className={s.textarea}>
-                        <textarea
-                            placeholder='Введіть ваше повідомлення'
-                            onChange={onMessageChange}
-                            className="form-control mr-sm-2"
-                            ref={newMessageElement}
-                            value={newMessageTextBody}
-                        />
-                    </div>
-                    <div className={s.button}>
-                        <button
-                            type="button"
-                            className="btn btn-success btn-lg"
-                            onClick={onAddMessage}
-                        >Відправити
-                </button>
-                    </div>
+                    <AddMessageReduxForm onSubmit={addNewMessage} />
                 </div>
             </div>
         </div>
     )
 }
 
-export default Onconsult
+const AddMessageForm = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit}>
+            <div className={s.textarea}>
+                <Field
+                    component="textarea" name="newMessageText" placeholder="Введіть ваше повідомлення"
+                    className="form-control mr-sm-2" />
+            </div>
+            <div className={s.button}>
+                <button className="btn btn-success btn-lg">
+                    Відправити
+                </button>
+            </div>
+        </form>
+    )
+}
+
+const AddMessageReduxForm = reduxForm({form: "onconsultAddMessageForm"})(AddMessageForm)
+
+export default Onconsult;

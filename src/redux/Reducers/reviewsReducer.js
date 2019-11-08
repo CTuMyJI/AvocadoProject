@@ -1,14 +1,11 @@
 const ADD_REVIEWS = 'ADD-REVIEWS';
-const UPDATE_NEW_REVIEW_TEXT = 'UPDATE-NEW-REVIEW-TEXT';
 
 let initialState = {
     review: [
         { id: 1, review: 'UUU SUKA', name: 'Mikola' },
         { id: 2, review: 'TA ZA SHO', name: 'Valera' },
         { id: 3, review: 'ROZBIYNIKI', name: 'Vasiliy' }
-    ],
-
-    newReviewText: '',
+    ]
 };
 
 export const reviewsReducer = (state = initialState, action) => {
@@ -17,18 +14,11 @@ export const reviewsReducer = (state = initialState, action) => {
             let newReview = {
                 id: 4,
                 name: 'Zeleboba',
-                review: state.newReviewText
+                review: action.newReviewText
             };
             return {
                 ...state,
                 review: [...state.review, newReview],
-                newReviewText: ''
-            };
-        }
-        case UPDATE_NEW_REVIEW_TEXT: {
-            return {
-                ...state,
-                newReviewText: action.newText
             };
         }
         default:
@@ -36,8 +26,6 @@ export const reviewsReducer = (state = initialState, action) => {
     }
 }
 
-export const addReviews = () => ({ type: ADD_REVIEWS })
-
-export const updateNewReviewText = (text) => ({ type: UPDATE_NEW_REVIEW_TEXT, newText: text })
+export const addReviews = (newReviewText) => ({ type: ADD_REVIEWS, newReviewText })
 
 export default reviewsReducer

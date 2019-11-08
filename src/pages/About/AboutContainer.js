@@ -1,4 +1,4 @@
-import { updateNewReviewText, addReviews } from '../../redux/Reducers/reviewsReducer'
+import { addReviews } from '../../redux/Reducers/reviewsReducer'
 import About from './About'
 import { connect } from 'react-redux'
 import {compose} from 'redux'
@@ -10,5 +10,5 @@ const mapStateToProps = (state) => {
 }
 
 export default compose(
-    connect(mapStateToProps, {updateNewReviewText, addReviews})
+    connect(mapStateToProps, {addReviews})
 )(About);

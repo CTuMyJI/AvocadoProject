@@ -1,25 +1,17 @@
 import React from 'react'
 import s from './About.module.css'
 import Reviews from './Reviews/Reviews'
+import { reduxForm, Field } from 'redux-form'
 
 const About = (props) => {
 
     let state = props.reviews;
 
-    let reviewsElements = state.review.map(r => <Reviews name={r.name} id={r.id} review={r.review} key={r.id}/>)
+    let reviewsElements = state.review.map(r => <Reviews name={r.name} id={r.id} review={r.review} key={r.id} />)
 
-    let addReview = () => {
-        props.addReviews();
+    let addNewReview = (values) => {
+        props.addReviews(values.newReviewText);
     }
-
-    let onReviewChange = () => {
-        let text = newReviewElement.current.value;
-        props.updateNewReviewText(text);
-    }
-
-    let newReviewTextBody = state.newReviewText;
-
-    let newReviewElement = React.createRef();
 
     return (
         <div className="jumbotron">
@@ -33,20 +25,28 @@ const About = (props) => {
             </div>
             {reviewsElements}
             <hr />
-            <div>
-                <h4>Тут Ви можете залиши свій відгук:</h4>
-                <textarea
-                    placeholder='Введіть ваше повідомлення'
-                    onChange={onReviewChange}
-                    ref={newReviewElement}
-                    value={newReviewTextBody}
-                    className="form-control mr-sm-2" />
-            </div>
-            <div className={s.button}>
-                <button type="button" className="btn btn-success btn-lg" onClick={addReview}>Відправити</button>
-            </div>
+            <h4>Тут Ви можете залиши свій відгук:</h4>
+            <AddNewReviewReduxForm onSubmit={addNewReview}/>
         </div>
     )
 }
 
-export default About
+const AddNewReviewForm = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit}>
+            <div>
+                <Field component={"textarea"} name={"newReviewText"} placeholder='Введіть ваше повідомлення'
+                    className="form-control mr-sm-2" />
+            </div>
+            <div className={s.button}>
+                <button className="btn btn-success btn-lg">
+                    Відправити
+                </button>
+            </div>
+        </form>
+    )
+}
+
+const AddNewReviewReduxForm = reduxForm({ form: "reviewAddMessageForm" })(AddNewReviewForm);
+
+export default About;
