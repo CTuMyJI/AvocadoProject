@@ -33,8 +33,12 @@ export const Navbar = (props) => (
                 <NavLink to="/users" className="nav-link">Користувачі</NavLink>
             </li>
             <li className={s.loginBlock}>
-                { props.isAuth ? props.login
-                : <NavLink to={'/login'} className="nav-link">ВХІД</NavLink> }
+                {props.isAuth
+                    ? <div>
+                        {props.login}
+                        <button onClick={props.logout}>Вийти</button>
+                    </div>
+                    : <NavLink to={'/login'} className="nav-link">ВХІД</NavLink>}
             </li>
         </ul>
     </nav>
