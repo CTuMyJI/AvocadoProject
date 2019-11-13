@@ -2,6 +2,8 @@ import React from 'react'
 import s from './About.module.css'
 import Reviews from './Reviews/Reviews'
 import { reduxForm, Field } from 'redux-form'
+import { Textarea } from '../../components/common/FormsControls/FormsControls'
+import { required, maxLengthCreator } from '../../utils/validators/validators'
 
 const About = (props) => {
 
@@ -31,11 +33,13 @@ const About = (props) => {
     )
 }
 
+const maxLength100 = maxLengthCreator(100);
+
 const AddNewReviewForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
             <div>
-                <Field component={"textarea"} name={"newReviewText"} placeholder='Введіть ваше повідомлення'
+                <Field component={Textarea} validate={[required, maxLength100]} name={"newReviewText"} placeholder='Введіть ваше повідомлення'
                     className="form-control mr-sm-2" />
             </div>
             <div className={s.button}>

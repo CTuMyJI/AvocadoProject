@@ -4,6 +4,8 @@ import ProfileStatus from './ProfileSatus'
 import userAvatar from '../../../assets/images/user.jpg'
 import styles from './ProfileInfo.module.css'
 import { reduxForm, Field } from 'redux-form'
+import {required, maxLengthCreator} from '../../../utils/validators/validators'
+import { Textarea } from '../../../components/common/FormsControls/FormsControls'
 
 const ProfileInfo = (props) => {
     if (!props.profile) {
@@ -31,6 +33,8 @@ const ProfileInfo = (props) => {
     )
 }
 
+const maxLength10 = maxLengthCreator(10);
+
 const ProfileForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
@@ -38,8 +42,9 @@ const ProfileForm = (props) => {
                 <Field
                     placeholder='Введіть ваше повідомлення'
                     className="form-control mr-sm-2"
-                    component={"textarea"}
+                    component={Textarea}
                     name={"newPostText"}
+                    validate={[required, maxLength10]}
                 ></Field>
             </div>
             <div>

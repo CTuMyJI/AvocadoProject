@@ -3,6 +3,8 @@ import s from './Onconsult.module.css'
 import DialogItem from '../Onconsult/DialogItem/DialogItem'
 import Message from './Messages/Message'
 import { reduxForm, Field } from 'redux-form'
+import { Textarea } from '../../components/common/FormsControls/FormsControls'
+import { required, maxLengthCreator } from '../../utils/validators/validators'
 
 const Onconsult = (props) => {
     
@@ -32,13 +34,15 @@ const Onconsult = (props) => {
     )
 }
 
+const maxLength50 = maxLengthCreator(50);
+
 const AddMessageForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
             <div className={s.textarea}>
                 <Field
-                    component="textarea" name="newMessageText" placeholder="Введіть ваше повідомлення"
-                    className="form-control mr-sm-2" />
+                    component={Textarea} name="newMessageText" placeholder="Введіть ваше повідомлення"
+                    className="form-control mr-sm-2" validate={[required, maxLength50]}/>
             </div>
             <div className={s.button}>
                 <button className="btn btn-success btn-lg">
