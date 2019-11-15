@@ -9,6 +9,7 @@ import profileReducer from './Reducers/profileReducer';
 import authReducer from './Reducers/authReducer';
 import thunkMiddleware from 'redux-thunk';
 import { reducer as formReducer } from 'redux-form';
+import appReducer from './Reducers/appReducer';
 
 let reducers = combineReducers({
     messages: messagesReducer,
@@ -19,7 +20,8 @@ let reducers = combineReducers({
     usersPage: usersReducer,
     profilePage: profileReducer,
     auth: authReducer,
-    form: formReducer
+    form: formReducer,
+    app: appReducer
 });
 
 let store = createStore(reducers, applyMiddleware(thunkMiddleware));

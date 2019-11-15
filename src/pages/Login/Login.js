@@ -19,13 +19,13 @@ const LoginForm = (props) => {
                     validate={[required]} type={"password"} />
             </div>
             <div>
-                <Field type={"checkbox"} component={Input} name={"rememberMe"} /> remember me
+                <Field type={"checkbox"} component={Input} name={"rememberMe"} /> запам'ятати мене
                </div>
             { props.error && <div className={styles.formSummaryError}>
             {props.error}
             </div>}
             <div>
-                <button>Login</button>
+                <button>Увійти</button>
             </div>
         </form>
     )
@@ -44,7 +44,7 @@ const Login = (props) => {
 
     return (
         <div>
-            <h1>Login</h1>
+            <h1>Авторизація</h1>
             <LoginReduxForm onSubmit={onSubmit} />
         </div>
     )

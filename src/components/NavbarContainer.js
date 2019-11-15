@@ -1,14 +1,10 @@
 import React from 'react'
 import { Navbar } from './Navbar'
 import { connect } from 'react-redux'
-import { getAuthUserData } from '../redux/Reducers/authReducer'
 import {compose} from 'redux'
 import {logout} from '../redux/Reducers/authReducer'
 
 class NavbarContainer extends React.Component {
-    componentDidMount() {
-        this.props.getAuthUserData();
-    }
     
     render() {
         return <Navbar {...this.props} />
@@ -21,5 +17,5 @@ const mapStateToProps = (state) => ({
 })
 
 export default compose(
-    connect(mapStateToProps, {getAuthUserData, logout})
+    connect(mapStateToProps, {logout})
 )(NavbarContainer);
