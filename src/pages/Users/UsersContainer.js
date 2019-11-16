@@ -10,7 +10,7 @@ import Users from './Users'
 import Preloader from '../../components/common/Preloader'
 //import { withAuthRedirect } from '../../hoc/WithAuthRedirect'
 import { compose } from 'redux'
-import {getUsers, getPageSize, getTotalUsersCount, getCurrentPage, getIsLoading, getFollowingInProgress} from '../../redux/Selectors/usersSelectors'
+import {getPageSize, getTotalUsersCount, getCurrentPage, getIsLoading, getFollowingInProgress, getUsers} from '../../redux/Selectors/usersSelectors'
 
 class UsersContainer extends React.Component {
     componentDidMount() {
