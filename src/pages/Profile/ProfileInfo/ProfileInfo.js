@@ -1,11 +1,11 @@
 import React from 'react'
 import Preloader from '../../../components/common/Preloader'
-import ProfileStatus from './ProfileSatus'
 import userAvatar from '../../../assets/images/user.jpg'
 import styles from './ProfileInfo.module.css'
 import { reduxForm, Field } from 'redux-form'
 import {required, maxLengthCreator} from '../../../utils/validators/validators'
 import { Textarea } from '../../../components/common/FormsControls/FormsControls'
+import ProfileStatusWithHooks from './ProfileSatusWithHooks'
 
 const ProfileInfo = (props) => {
     if (!props.profile) {
@@ -21,7 +21,7 @@ const ProfileInfo = (props) => {
             <div>
                 <img src={props.profile.photos.large || userAvatar} alt='...' className={styles.image} />
             </div>
-            <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
+            <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus} />
             <ul>Про мене: <h6>{props.profile.aboutMe}</h6></ul>
             <ul>Сторінка Facebook: <h6>{props.profile.contacts.facebook}</h6></ul>
             <ul>Github: <h6>{props.profile.contacts.github}</h6></ul>
