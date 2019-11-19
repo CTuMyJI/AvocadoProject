@@ -1,10 +1,8 @@
 import React from 'react'
-import Post from './Post/Post'
 import ProfileInfo from './ProfileInfo/ProfileInfo'
+import MyPostsContainer from './MyPosts/MyPostsContainer'
 
 const Profile = (props) => {
-    let postsElements = props.posts.map(p => <Post post={p.post} id={p.id} likeCount={p.likeCount} key={p.id} />)
-
     return (
         <div>
             <ProfileInfo
@@ -15,7 +13,7 @@ const Profile = (props) => {
                 status={props.status}
                 updateStatus={props.updateStatus}
             />
-            {postsElements}
+            <MyPostsContainer />
         </div>
     )
 }

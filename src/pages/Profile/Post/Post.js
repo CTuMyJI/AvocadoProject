@@ -2,7 +2,6 @@ import React from 'react'
 import styles from './Post.module.css'
 
 const Post = (props) => {
-
     return (
         <div>
             <div className={styles.wrapper}>
@@ -13,8 +12,8 @@ const Post = (props) => {
             </div>
             <div>
                 <ul>
-                    <img src='https://pngicon.ru/file/uploads/like.png' alt='...' className={styles.likeCount}/>
-                    {props.likeCount} </ul>
+                    Like: {props.likeCount}
+                </ul>
             </div>
         </div>
     )
