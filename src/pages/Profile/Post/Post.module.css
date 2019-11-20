@@ -5,6 +5,8 @@
 .avatar {
     width: 70px;
     height: 70px;
+    border: green 2px solid;
+    border-radius: 15px;
 }
 
 .likeCount {
