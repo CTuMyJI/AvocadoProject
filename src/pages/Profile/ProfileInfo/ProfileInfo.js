@@ -4,19 +4,19 @@ import userAvatar from '../../../assets/images/user.jpg'
 import styles from './ProfileInfo.module.css'
 import ProfileStatusWithHooks from './ProfileSatusWithHooks'
 
-const ProfileInfo = (props) => {
-    if (!props.profile) {
+const ProfileInfo = ({profile, status, updateStatus}) => {
+    if (!profile) {
         return <Preloader />
     }
     return (
         <div>
             <div>
-                <img src={props.profile.photos.large || userAvatar} alt='...' className={styles.image} />
+                <img src={profile.photos.large || userAvatar} alt='...' className={styles.image} />
             </div>
-            <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus} />
-            <ul>Про мене: <h6>{props.profile.aboutMe}</h6></ul>
-            <ul>Сторінка Facebook: <h6>{props.profile.contacts.facebook}</h6></ul>
-            <ul>Github: <h6>{props.profile.contacts.github}</h6></ul>
+            <ProfileStatusWithHooks status={status} updateStatus={updateStatus} />
+            <ul>Про мене: <h6>{profile.aboutMe}</h6></ul>
+            <ul>Сторінка Facebook: <h6>{profile.contacts.facebook}</h6></ul>
+            <ul>Github: <h6>{profile.contacts.github}</h6></ul>
         </div>
     )
 }
