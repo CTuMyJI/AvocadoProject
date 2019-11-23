@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/AvocadoProject/static/css/main.43cc10b6.chunk.css",
+    "main.js": "/AvocadoProject/static/js/main.870aa65e.chunk.js",
+    "main.js.map": "/AvocadoProject/static/js/main.870aa65e.chunk.js.map",
+    "runtime-main.js": "/AvocadoProject/static/js/runtime-main.29c91b68.js",
+    "runtime-main.js.map": "/AvocadoProject/static/js/runtime-main.29c91b68.js.map",
+    "static/js/2.04f87a6a.chunk.js": "/AvocadoProject/static/js/2.04f87a6a.chunk.js",
+    "static/js/2.04f87a6a.chunk.js.map": "/AvocadoProject/static/js/2.04f87a6a.chunk.js.map",
+    "static/css/3.0194b4d1.chunk.css": "/AvocadoProject/static/css/3.0194b4d1.chunk.css",
+    "static/js/3.0a01cd8a.chunk.js": "/AvocadoProject/static/js/3.0a01cd8a.chunk.js",
+    "static/js/3.0a01cd8a.chunk.js.map": "/AvocadoProject/static/js/3.0a01cd8a.chunk.js.map",
+    "static/css/4.2c1586bc.chunk.css": "/AvocadoProject/static/css/4.2c1586bc.chunk.css",
+    "static/js/4.ba886660.chunk.js": "/AvocadoProject/static/js/4.ba886660.chunk.js",
+    "static/js/4.ba886660.chunk.js.map": "/AvocadoProject/static/js/4.ba886660.chunk.js.map",
+    "index.html": "/AvocadoProject/index.html",
+    "precache-manifest.6afdde69e65cbab0941069808a8b9ac5.js": "/AvocadoProject/precache-manifest.6afdde69e65cbab0941069808a8b9ac5.js",
+    "service-worker.js": "/AvocadoProject/service-worker.js",
+    "static/css/3.0194b4d1.chunk.css.map": "/AvocadoProject/static/css/3.0194b4d1.chunk.css.map",
+    "static/css/4.2c1586bc.chunk.css.map": "/AvocadoProject/static/css/4.2c1586bc.chunk.css.map",
+    "static/css/main.43cc10b6.chunk.css.map": "/AvocadoProject/static/css/main.43cc10b6.chunk.css.map",
+    "static/media/preloader.gif": "/AvocadoProject/static/media/preloader.b4a19bf8.gif",
+    "static/media/user.jpg": "/AvocadoProject/static/media/user.8ed61819.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.29c91b68.js",
+    "static/js/2.04f87a6a.chunk.js",
+    "static/css/main.43cc10b6.chunk.css",
+    "static/js/main.870aa65e.chunk.js"
+  ]
+}
