@@ -10,11 +10,9 @@ let initialState = {
         { id: 1, avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyLOSI1mCpxzU6FVIs0FsQ9Oa0m50HroB7rVJk1FGh8aZYNszY&s', status: 'Доброго дня!' }
     ],
     posts: [
-        { id: 1, post: 'pepeha', likeCount: 3 },
-        { id: 2, post: 'pog', likeCount: 1 },
-        { id: 3, post: 'lul', likeCount: 4 },
-        { id: 4, post: 'da da ya', likeCount: 5 },
-    ],
+        { id: 1, post: 'Hello world!', likeCount: 3 },
+        { id: 2, post: 'Yo Yo', likeCount: 1 },
+        { id: 3, post: 'it-kamasutra!', likeCount: 4 }    ],
     profile: null,
     status: ""
 };

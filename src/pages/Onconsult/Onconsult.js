@@ -21,11 +21,11 @@ const Onconsult = (props) => {
         <div className="jumbotron">
             <div className={s.dialogs}>
                 <div className={s.dialogsItems}>
-                    <h3>Оберіть спеціаліста:</h3>
+                    <h3>Users:</h3>
                     {dialogsElements}
                 </div>
                 <div className={s.chat}>
-                    <h3>ЧАТ:</h3>
+                    <h3>Chat:</h3>
                     {messagesElements}
                     <AddMessageReduxForm onSubmit={addNewMessage} />
                 </div>
@@ -41,12 +41,12 @@ const AddMessageForm = (props) => {
         <form onSubmit={props.handleSubmit}>
             <div className={s.textarea}>
                 <Field
-                    component={Textarea} name="newMessageText" placeholder="Введіть ваше повідомлення"
+                    component={Textarea} name="newMessageText" placeholder="Enter your message text"
                     className="form-control mr-sm-2" validate={[required, maxLength50]}/>
             </div>
             <div className={s.button}>
                 <button className="btn btn-success btn-lg">
-                    Відправити
+                    Send
                 </button>
             </div>
         </form>

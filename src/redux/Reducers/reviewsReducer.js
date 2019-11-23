@@ -2,9 +2,9 @@ const ADD_REVIEWS = 'ADD-REVIEWS';
 
 let initialState = {
     review: [
-        { id: 1, review: 'UUU SUKA', name: 'Mikola' },
-        { id: 2, review: 'TA ZA SHO', name: 'Valera' },
-        { id: 3, review: 'ROZBIYNIKI', name: 'Vasiliy' }
+        { id: 1, review: 'Nice!', name: 'UserName1' },
+        { id: 2, review: 'Not bad', name: 'UserName2' },
+        { id: 3, review: 'Thanks for the help', name: 'UserName3' }
     ]
 };
 

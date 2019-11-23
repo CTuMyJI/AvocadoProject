@@ -13,13 +13,13 @@ const AvoItems = (props) => {
                 <n className="card-text">{props.pow}</n>
             </div>
             <ul className="list-group list-group-flush">
-                <li className="list-group-item">адреса: {props.address}</li>
-                <li className="list-group-item">моб. тел. {props.ctel}</li>
-                <li className="list-group-item">тел. {props.tel}</li>
+                <li className="list-group-item">address: {props.address}</li>
+                <li className="list-group-item">cellphone {props.ctel}</li>
+                <li className="list-group-item">phone {props.tel}</li>
             </ul>
             <div className="card-body">
-                <NavLink to="/onconsult" className="card-link">Надіслати повідомлення</NavLink>
-                <NavLink to="/profilen/website" className="card-link">Веб-сторінка</NavLink>
+                <NavLink to="/onconsult" className="card-link">Send message</NavLink>
+                <NavLink to="/profilen/website" className="card-link">Web-site</NavLink>
             </div>
             </div>
         </div>

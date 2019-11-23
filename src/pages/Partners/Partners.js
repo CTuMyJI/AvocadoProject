@@ -7,14 +7,14 @@ export const Partners = (props) => {
         <div>
             <div className="jumbotron jumbotron-fluid">
                 <div className="container">
-                    <h1 className="display-4">Наші партнери</h1>
-                    <p className="lead">На цій сторінці Ви можете ознайомитися з нашими фахівцями. Вам необхідно знайти...</p>
+                    <h1 className="display-4">Our partners</h1>
+                    <p className="lead">...description...</p>
 
                     <NavLink to="/profilen" className="nav-link">
-                        <button type="button" className="btn btn-success btn-lg">Переглянути нотаріусів</button>
+                        <button type="button" className="btn btn-success btn-lg">Notary</button>
                     </NavLink>
                     <NavLink to="/profilea" className="nav-link">
-                        <button type="button" className="btn btn-primary btn-lg">Переглянути адвакатів</button>
+                        <button type="button" className="btn btn-primary btn-lg">Advocate</button>
                     </NavLink>
                 </div>
             </div>

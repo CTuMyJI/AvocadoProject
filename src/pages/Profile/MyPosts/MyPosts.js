@@ -11,7 +11,7 @@ const ProfileForm = (props) => {
         <form onSubmit={props.handleSubmit}>
             <div>
                 <Field
-                    placeholder='Введіть ваше повідомлення'
+                    placeholder='Post text'
                     className="form-control mr-sm-2"
                     component={Textarea}
                     name={"newPostText"}
@@ -20,7 +20,7 @@ const ProfileForm = (props) => {
             </div>
             <div>
                 <button className="btn btn-success btn-lg">
-                    Додати пост
+                    Add post
                 </button>
             </div>
         </form>

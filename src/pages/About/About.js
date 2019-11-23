@@ -18,16 +18,16 @@ const About = (props) => {
     return (
         <div className="jumbotron">
             <div className="container">
-                <h1 className="display-5">Інформація про AVOCADO</h1>
-                <p className="lead">Сцики брики без пердики, то шо свадьба без музики. version 0.0.0.0.0.1</p>
+                <h1 className="display-5">About AVOCADO</h1>
+                <p className="lead">...description...</p>
             </div>
             <div>
                 <hr />
-                <h2>Відгуки користувачів:</h2>
+                <h2>Users reviews:</h2>
             </div>
             {reviewsElements}
             <hr />
-            <h4>Тут Ви можете залиши свій відгук:</h4>
+            <h4>Add your review:</h4>
             <AddNewReviewReduxForm onSubmit={addNewReview}/>
         </div>
     )
@@ -39,12 +39,12 @@ const AddNewReviewForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
             <div>
-                <Field component={Textarea} validate={[required, maxLength100]} name={"newReviewText"} placeholder='Введіть ваше повідомлення'
+                <Field component={Textarea} validate={[required, maxLength100]} name={"newReviewText"} placeholder='Review text'
                     className="form-control mr-sm-2" />
             </div>
             <div className={s.button}>
                 <button className="btn btn-success btn-lg">
-                    Відправити
+                    Send
                 </button>
             </div>
         </form>

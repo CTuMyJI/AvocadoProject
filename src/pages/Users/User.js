@@ -16,11 +16,11 @@ let User = ({ user, followingInProgress, unfollow, follow }) => {
                     {user.followed
                         ? <button disabled={followingInProgress.some(id => id === user.id)} className="btn btn-danger btn-lg"
                             onClick={() => { unfollow(user.id) }}
-                        >Відписатися</button>
+                        >Unfollow</button>
 
                         : <button disabled={followingInProgress.some(id => id === user.id)} className="btn btn-success btn-lg"
                             onClick={() => { follow(user.id) }}
-                        >Підписатися</button>}
+                        >Follow</button>}
                 </div>
             </span>
             <span>
