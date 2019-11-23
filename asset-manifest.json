@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/AvocadoProject/static/css/main.43cc10b6.chunk.css",
-    "main.js": "/AvocadoProject/static/js/main.7a043535.chunk.js",
-    "main.js.map": "/AvocadoProject/static/js/main.7a043535.chunk.js.map",
-    "runtime-main.js": "/AvocadoProject/static/js/runtime-main.29c91b68.js",
-    "runtime-main.js.map": "/AvocadoProject/static/js/runtime-main.29c91b68.js.map",
-    "static/js/2.04f87a6a.chunk.js": "/AvocadoProject/static/js/2.04f87a6a.chunk.js",
-    "static/js/2.04f87a6a.chunk.js.map": "/AvocadoProject/static/js/2.04f87a6a.chunk.js.map",
+    "main.js": "/AvocadoProject/static/js/main.4dec5f13.chunk.js",
+    "main.js.map": "/AvocadoProject/static/js/main.4dec5f13.chunk.js.map",
+    "runtime-main.js": "/AvocadoProject/static/js/runtime-main.5598be31.js",
+    "runtime-main.js.map": "/AvocadoProject/static/js/runtime-main.5598be31.js.map",
+    "static/js/2.716ae79c.chunk.js": "/AvocadoProject/static/js/2.716ae79c.chunk.js",
+    "static/js/2.716ae79c.chunk.js.map": "/AvocadoProject/static/js/2.716ae79c.chunk.js.map",
     "static/css/3.0194b4d1.chunk.css": "/AvocadoProject/static/css/3.0194b4d1.chunk.css",
-    "static/js/3.0a01cd8a.chunk.js": "/AvocadoProject/static/js/3.0a01cd8a.chunk.js",
-    "static/js/3.0a01cd8a.chunk.js.map": "/AvocadoProject/static/js/3.0a01cd8a.chunk.js.map",
+    "static/js/3.c66ea894.chunk.js": "/AvocadoProject/static/js/3.c66ea894.chunk.js",
+    "static/js/3.c66ea894.chunk.js.map": "/AvocadoProject/static/js/3.c66ea894.chunk.js.map",
     "static/css/4.2c1586bc.chunk.css": "/AvocadoProject/static/css/4.2c1586bc.chunk.css",
     "static/js/4.ba886660.chunk.js": "/AvocadoProject/static/js/4.ba886660.chunk.js",
     "static/js/4.ba886660.chunk.js.map": "/AvocadoProject/static/js/4.ba886660.chunk.js.map",
     "index.html": "/AvocadoProject/index.html",
-    "precache-manifest.0ae7e4854b5637a69fffeefacd112f90.js": "/AvocadoProject/precache-manifest.0ae7e4854b5637a69fffeefacd112f90.js",
+    "precache-manifest.5c95c31bff426be61aecb279bf01fdb2.js": "/AvocadoProject/precache-manifest.5c95c31bff426be61aecb279bf01fdb2.js",
     "service-worker.js": "/AvocadoProject/service-worker.js",
     "static/css/3.0194b4d1.chunk.css.map": "/AvocadoProject/static/css/3.0194b4d1.chunk.css.map",
     "static/css/4.2c1586bc.chunk.css.map": "/AvocadoProject/static/css/4.2c1586bc.chunk.css.map",
@@ -23,9 +23,9 @@
     "static/media/user.jpg": "/AvocadoProject/static/media/user.8ed61819.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.29c91b68.js",
-    "static/js/2.04f87a6a.chunk.js",
+    "static/js/runtime-main.5598be31.js",
+    "static/js/2.716ae79c.chunk.js",
     "static/css/main.43cc10b6.chunk.css",
-    "static/js/main.7a043535.chunk.js"
+    "static/js/main.4dec5f13.chunk.js"
   ]
 }
