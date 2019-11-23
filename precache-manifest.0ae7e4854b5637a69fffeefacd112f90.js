@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5fc525fe92506b4617006ec1d2197cd3",
+    "revision": "352dd9b194ad6f6fea53c51e3024c5ac",
     "url": "/AvocadoProject/index.html"
   },
   {
@@ -12,7 +12,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/AvocadoProject/static/css/4.2c1586bc.chunk.css"
   },
   {
-    "revision": "9def9be2aa87d3c8054a",
+    "revision": "53a557100af26281e276",
     "url": "/AvocadoProject/static/css/main.43cc10b6.chunk.css"
   },
   {
@@ -28,8 +28,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/AvocadoProject/static/js/4.ba886660.chunk.js"
   },
   {
-    "revision": "9def9be2aa87d3c8054a",
-    "url": "/AvocadoProject/static/js/main.870aa65e.chunk.js"
+    "revision": "53a557100af26281e276",
+    "url": "/AvocadoProject/static/js/main.7a043535.chunk.js"
   },
   {
     "revision": "4498d42916200be75b27",
