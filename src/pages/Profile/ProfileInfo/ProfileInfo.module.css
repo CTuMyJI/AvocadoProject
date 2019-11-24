@@ -4,3 +4,18 @@
     border: green solid 2px;
     border-radius: 50px;
 }
+
+.description {
+    padding-bottom: 10px;
+    padding-left: 15px;
+}
+
+.profileData {
+    padding-top: 10px;
+}
+
+.formSummaryError {
+    border: red 1px solid;
+    padding: 5px;
+    color: red;
+}
