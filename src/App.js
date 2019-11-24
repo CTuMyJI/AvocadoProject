@@ -13,7 +13,7 @@ import { connect } from 'react-redux'
 import { compose } from 'redux'
 import { initializeApp } from './redux/Reducers/appReducer'
 import Preloader from './components/common/Preloader'
-import { BrowserRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from './redux/redux-store'
 import { withSuspense } from './hoc/WithSuspense'
@@ -71,11 +71,11 @@ const AppContainer = compose(
 
 const AvocadoApp = (props) => {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter>
       <Provider store={store}>
         <AppContainer />
       </Provider>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
