@@ -32,14 +32,14 @@ export const Navbar = (props) => (
             <li className="navbar-item">
                 <NavLink to="/users" className="nav-link">Users</NavLink>
             </li>
-            <li className={s.loginBlock}>
+            <div className={s.loginBlock}>
                 {props.isAuth
                     ? <div className="nav-link">
                         {props.login}
                         <button onClick={props.logout} className="btn btn-danger btn-sm">Logout</button>
                     </div>
                     : <NavLink to={'/login'} className="nav-link">LOGIN</NavLink>}
-            </li>
+            </div>
         </ul>
     </nav>
 )

@@ -4,6 +4,7 @@ import userAvatar from '../../assets/images/user.jpg'
 import { NavLink } from 'react-router-dom'
 
 let User = ({ user, followingInProgress, unfollow, follow }) => {
+    debugger
     return (
         <div>
             <span>
@@ -12,6 +13,12 @@ let User = ({ user, followingInProgress, unfollow, follow }) => {
                         <img className={s.image} src={user.photos.small != null ? user.photos.small : userAvatar} alt='...' />
                     </NavLink>
                 </div>
+                <span>
+                    <span>
+                        <div>name:<b> {user.name}</b></div>
+                        <div>{user.status}</div>
+                    </span>
+                </span>
                 <div>
                     {user.followed
                         ? <button disabled={followingInProgress.some(id => id === user.id)} className="btn btn-danger btn-lg"
@@ -23,17 +30,6 @@ let User = ({ user, followingInProgress, unfollow, follow }) => {
                         >Follow</button>}
                 </div>
             </span>
-            <span>
-                <span>
-                    <div>{user.name}</div>
-                    <div>{user.status}</div>
-                </span>
-                <span>
-                    <div>{"user.location.country"}</div>
-                    <div>{"user.location.city"}</div>
-                </span>
-            </span>
-
         </div>
     )
 }
