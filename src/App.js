@@ -13,7 +13,7 @@ import { connect } from 'react-redux'
 import { compose } from 'redux'
 import { initializeApp } from './redux/Reducers/appReducer'
 import Preloader from './components/common/Preloader'
-import { HashRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from './redux/redux-store'
 import { withSuspense } from './hoc/WithSuspense'
@@ -22,8 +22,16 @@ const OnconsultContainer = React.lazy(() => import('./pages/Onconsult/OnconsultC
 const ProfileContainer = React.lazy(() => import('./pages/Profile/ProfileContainer'));
 
 class App extends React.Component {
+  catchAllUnhandledErrors = (reason, promise) => {
+    alert("Some error occured");
+    //console.error(promiseRejectionEvent);
+  }
   componentDidMount() {
     this.props.initializeApp();
+    window.addEventListener("unhandledrejection", this.catchAllUnhandledErrors);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("unhandledrejection", this.catchAllUnhandledErrors);
   }
 
   render() {
@@ -71,11 +79,11 @@ const AppContainer = compose(
 
 const AvocadoApp = (props) => {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Provider store={store}>
         <AppContainer />
       </Provider>
-    </HashRouter>
+    </BrowserRouter>
   )
 }
 

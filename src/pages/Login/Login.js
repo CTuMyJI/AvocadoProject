@@ -21,7 +21,7 @@ const LoginForm = ({ handleSubmit, error, captchaUrl }) => {
                 {error}
             </div>}
             <div>
-                <button>Увійти</button>
+                <button className="btn btn-success btn-sm">Login</button>
             </div>
         </form>
     )
