@@ -4,7 +4,6 @@ import userAvatar from '../../assets/images/user.jpg'
 import { NavLink } from 'react-router-dom'
 
 let User = ({ user, followingInProgress, unfollow, follow }) => {
-    debugger
     return (
         <div>
             <span>

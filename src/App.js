@@ -1,6 +1,5 @@
 import React from 'react'
 import { Switch, Route, withRouter } from 'react-router-dom'
-import { Home } from './pages/Home/Home'
 import { Services } from './pages/Services/Services'
 import { Partners } from './pages/Partners/Partners'
 import AboutContainer from './pages/About/AboutContainer'
@@ -17,13 +16,14 @@ import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from './redux/redux-store'
 import { withSuspense } from './hoc/WithSuspense'
+import HomeContainer from './pages/Home/HomeContainer'
 
 const OnconsultContainer = React.lazy(() => import('./pages/Onconsult/OnconsultContainer'));
 const ProfileContainer = React.lazy(() => import('./pages/Profile/ProfileContainer'));
 
 class App extends React.Component {
   catchAllUnhandledErrors = (reason, promise) => {
-    alert("Some error occured");
+    //alert("Some error occured");
     //console.error(promiseRejectionEvent);
   }
   componentDidMount() {
@@ -44,7 +44,7 @@ class App extends React.Component {
         <NavbarContainer />
         <div className="container pt-4">
           <Switch>
-            <Route path="/" exact component={Home} />
+            <Route path="/" exact component={HomeContainer} />
             <Route path="/about"
               render={() => <AboutContainer />} />
             <Route path="/services" component={Services} />

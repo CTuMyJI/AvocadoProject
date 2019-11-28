@@ -10,6 +10,7 @@ import authReducer from './Reducers/authReducer';
 import thunkMiddleware from 'redux-thunk';
 import { reducer as formReducer } from 'redux-form';
 import appReducer from './Reducers/appReducer';
+import homePageReducer from './Reducers/homePageReducer';
 
 let reducers = combineReducers({
     messages: messagesReducer,
@@ -21,7 +22,8 @@ let reducers = combineReducers({
     profilePage: profileReducer,
     auth: authReducer,
     form: formReducer,
-    app: appReducer
+    app: appReducer,
+    home: homePageReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

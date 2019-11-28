@@ -7,7 +7,7 @@ export const Navbar = (props) => (
         <div className="navbar-brand">
             <img className={s.headerImage} src='https://pngriver.com/wp-content/uploads/2018/04/Download-Avocado-PNG-HD.png' alt='...'></img>
             <NavLink to="/" className="navbar-brand">
-                AVOCADO - legal services
+                AVOCADO - social network
             </NavLink>
         </div>
         <ul className="navbar-nav">
