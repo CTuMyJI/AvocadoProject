@@ -5,7 +5,9 @@ let initialState = [
     { id: 4, name: 'Julia', avatar: 'https://i.pinimg.com/736x/e4/bd/98/e4bd98a58bac3e45c8c4fbd919650b1d--marine-smile.jpg' }
 ];
 
-const dialogsReducer = (state = initialState, action) => {
+type InitialStateType = typeof initialState
+
+const dialogsReducer = (state = initialState, action: any): InitialStateType => {
 
     return state;
 }

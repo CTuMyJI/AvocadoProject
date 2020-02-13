@@ -32,6 +32,9 @@ export const Navbar = (props) => (
             <li className="navbar-item">
                 <NavLink to="/users" className="nav-link">Users</NavLink>
             </li>
+            <li className="navbar-item">
+                <NavLink to="/convert" className="nav-link">Calculator</NavLink>
+            </li>
             <div className={s.loginBlock}>
                 {props.isAuth
                     ? <div className="nav-link">

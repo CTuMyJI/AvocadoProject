@@ -17,7 +17,9 @@ let initialState = [
     }
 ];
 
-const notDataReducer = (state = initialState, action) => {
+type initialStateType = typeof initialState
+
+const notDataReducer = (state = initialState, action: any): initialStateType => {
 
     return state;
 }

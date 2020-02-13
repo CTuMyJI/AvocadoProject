@@ -1,4 +1,10 @@
-const ADD_MESSAGE = 'ADD-MESSAGE';
+const ADD_MESSAGE = 'ADD-MESSAGE'
+
+type MessageListType = {
+    id: number | null
+    currentUser: boolean
+    message: string | null
+}
 
 let initialState = {
     messageList: [
@@ -8,10 +14,12 @@ let initialState = {
         { id: 4, currentUser: false, message: 'Sure' },
         { id: 5, currentUser: true, message: 'Yoyoyo' },
         { id: 6, currentUser: false, message: '?????' }
-    ]
-};
+    ] as Array<MessageListType>
+}
 
-const messagesReducer = (state = initialState, action) => {
+export type InitialStateType = typeof initialState
+
+const messagesReducer = (state = initialState, action: any) => {
     switch (action.type) {
         case ADD_MESSAGE: {
             let newMessage = {
@@ -29,6 +37,11 @@ const messagesReducer = (state = initialState, action) => {
     }
 }
 
-export const addMessage = (newMessageText) => ({ type: ADD_MESSAGE, newMessageText })
+type AddMessageActionType = {
+    type: typeof ADD_MESSAGE
+    newMessageText: string
+}
+
+export const addMessage = (newMessageText: string): AddMessageActionType => ({ type: ADD_MESSAGE, newMessageText })
 
 export default messagesReducer

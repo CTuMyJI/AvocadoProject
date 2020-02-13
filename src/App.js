@@ -17,6 +17,7 @@ import { Provider } from 'react-redux'
 import store from './redux/redux-store'
 import { withSuspense } from './hoc/WithSuspense'
 import HomeContainer from './pages/Home/HomeContainer'
+import ConverterTest from './pages/Convertation/Convert/ConverterTest'
 
 const OnconsultContainer = React.lazy(() => import('./pages/Onconsult/OnconsultContainer'));
 const ProfileContainer = React.lazy(() => import('./pages/Profile/ProfileContainer'));
@@ -62,6 +63,8 @@ class App extends React.Component {
               render={() => <ProfileAContainer />} />
             <Route path="/login"
               render={() => <Login />} />
+            <Route path="/convert"
+              render={() => <ConverterTest />} />
           </Switch>
         </div>
       </div>

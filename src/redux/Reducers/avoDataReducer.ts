@@ -17,7 +17,9 @@ let initialState = [
     }
 ];
 
-const avoDataReducer = (state = initialState, action) => {
+type InitialStatetype = typeof initialState
+
+const avoDataReducer = (state = initialState, action: any): InitialStatetype => {
     return state;
 }
 
