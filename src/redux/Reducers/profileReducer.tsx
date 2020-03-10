@@ -1,4 +1,4 @@
-import { ProfileType, Photostype, PostsType } from './../../types/types';
+import { ProfileType, Photostype, PostsType } from '../../types/types';
 import { usersAPI, profileAPI } from "../../api/api"
 import { stopSubmit } from 'redux-form'
 
