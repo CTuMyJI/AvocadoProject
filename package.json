@@ -16,7 +16,7 @@
     "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
     "convert-units": "^2.3.4",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-grid": "^4.0.3",
